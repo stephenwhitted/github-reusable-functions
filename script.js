@@ -64,6 +64,18 @@ console.log(longestString); // Outputs: "breakfast" as the longest string
 
 
 
-//Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
+//1d Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
 //For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
-//Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+
+const phrases = ['please', 'wake', 'me', 'up', 'at', 'breakfast'];
+
+// filter strings based on specified minimum length (4)
+function filterByLength(words, minSize) {
+    return words.filter(word => word.length > minSize);
+}
+
+const longWords = filterByLength(phrases, 4);
+console.log(longWords); // Should output: ['please', 'breakfast']
+
+
+//1e Take a number, n, and print every number between 1 and n without using loops. Use recursion.
