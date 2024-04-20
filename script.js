@@ -79,3 +79,17 @@ console.log(longWords); // Should output: ['please', 'breakfast']
 
 
 //1e Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+
+
+// Function to print numbers from 1 to n
+function printNew(n) {
+    if (n > 0) {
+        printNew(n - 1); // Recursive call to print numbers before n
+        console.log(n + " "); // Print the current number
+    }
+    return;
+}
+
+const n = 10; // Use `const` if `n` is not going to change
+printNew(n); // Call the function with n = 10
+                                                   //outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
