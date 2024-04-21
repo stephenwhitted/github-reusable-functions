@@ -92,4 +92,106 @@ function printNew(n) {
 
 const n = 10; // Use `const` if `n` is not going to change
 printNew(n); // Call the function with n = 10
-                                                   //outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+//outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+////////////Part 2///////////////////////////////////////////////////////////////////////////////////
+/* 
+[{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, { id: "48", name: "Barry", occupation: "Runner", age: "25" }, { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, { id: "7", name: "Bilbo", occupation: "None", age: "111" }] */
+
+
+
+
+const people = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+];
+//2a Sort the array by age.
+function sortByAge(peopleArray) {
+    return peopleArray.sort((a, b) => parseInt(a.age) - parseInt(b.age));
+}
+
+console.log("Sorted by Age:", sortByAge([...people]));
+/*Output
+Sorted by Age: 
+(5) [{…}, {…}, {…}, {…}, {…}]
+0
+: 
+{id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19'}
+1
+: 
+{id: '48', name: 'Barry', occupation: 'Runner', age: '25'}
+2
+: 
+{id: '42', name: 'Bruce', occupation: 'Knight', age: '41'}
+3
+: 
+{id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58'}
+4
+: 
+{id: '7', name: 'Bilbo', occupation: 'None', age: '111'}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)
+*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//2b Filter the array to remove entries with an age greater than 50.
+const fiftyPlus = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+];
+
+function filterByAge2(fiftyPlusArray) {
+   
+    return fiftyPlusArray.filter(person => parseInt(person.age) <= 50);
+}
+
+console.log("Filtered People (Age <= 50):", filterByAge2(fiftyPlus));
+/* Output
+Filtered People (Age <= 50): 
+(3) [{…}, {…}, {…}]
+0
+: 
+{id: '42', name: 'Bruce', occupation: 'Knight', age: '41'}
+1
+: 
+{id: '48', name: 'Barry', occupation: 'Runner', age: '25'}
+2
+: 
+{id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19'}
+length
+: 
+3
+[[Prototype]]
+: 
+Array(0)
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//2c Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//2d Use the reduce method to calculate the sum of the ages.
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//2e Then use the result to calculate the average age.
+
+
