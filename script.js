@@ -360,4 +360,10 @@ function incrementAgeCopySimple(originalPerson) {
     console.log("Updated Person:", updatedPerson);
 }
 
+
+//if you modify a Date object, like using setTime(), all references to it will show this change. If you copy an object but don't clone the Date, both the original and the copy will share the same Date instance, meaning changes to one will affect the other.//
 ///////////Part 4////////////////////////////////////////////////////////////////////////////
+//TBD
+
+/////////Part 5/////////////////////////
+//TBD
