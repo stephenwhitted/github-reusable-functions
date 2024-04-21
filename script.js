@@ -255,4 +255,109 @@ const averageAge = totalAge / peeple.length;
 console.log("Average Age:", averageAge);
 
 //output: Average Age: 50.8
+
 /////////////Part 3/////////////////////////////////////////////////////////////////////////////////
+//Take an object and increment its age field.
+
+function incrementAgeEnhanced(person) {
+    // ensure 'person' is an object
+    if (typeof person !== 'object' || person === null) {
+        throw new TypeError("The person parameter must be an object.");
+    }
+
+    // 'age' to 0 if it doesn't exist or if not a number
+    if (typeof person.age !== 'number') {
+        person.age = 0;
+    }
+
+    // 'age' +1
+    person.age += 1;
+
+    // 'updated_at' field -> current date and time
+    person.updated_at = new Date();
+
+    // updated object
+    return person;
+}
+const person = { name: "John", age: 29 };
+const updatedPerson = incrementAgeOnCopySimple(person);
+console.log("Updated Person:", updatedPerson);
+
+//Take an object, make a copy, and increment the age field of the copy. Return the copy.
+
+function incrementAgeOnCopySimple(originalPerson) {
+    // copy of the original object using Object.assign.
+    const personCopy = Object.assign({}, originalPerson);
+
+    // see if 'age' field exists and is a number; if not, ensure it is 0
+    if (typeof personCopy.age !== 'number') {
+        personCopy.age = 0;
+    }
+
+    //  'age' field of the copy
+    personCopy.age += 1;
+
+    // 'updated_at' field -> current date and time
+    personCopy.updated_at = new Date();
+
+    // updated copy
+    return personCopy;
+}
+const originalPerson = { name: "Bob", age: 30 };
+const updatedCopy = incrementAgeOnCopySimple(originalPerson);
+console.log("Original Person:", originalPerson);
+console.log("Updated Copy:", updatedCopy);
+
+//For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+function incrementAgeSimple(person) {
+    // Check if 'age' field exists
+    if (person.age === undefined) {
+        // 'age' does not exist -> 0
+        person.age = 0;
+    }
+
+    // 'age' +1
+    person.age += 1;
+
+    //  'updated_at' -> current time
+    person.updated_at = new Date();
+
+    console.log('Person after increment:', person);
+}
+
+// test incrementAgeSimple
+const personSimple = { name: "Jane" }; 
+incrementAgeSimple(personSimple);
+console.log("Updated Simple Person:", personSimple);
+
+    
+//////////////////////////////////////////////
+
+function incrementAgeCopySimple(originalPerson) {
+
+    function incrementAgeCopySimple(originalPerson) {
+        
+        const personCopy = {
+            name: originalPerson.name,
+            age: originalPerson.age === undefined ? 0 : originalPerson.age, // if undefined initialize 'age' 
+            updated_at: new Date() //updated current date
+        };
+    
+        // 'age' +1
+        personCopy.age += 1;
+    
+        // 'updated_at' current time
+        personCopy.updated_at = new Date();
+    
+       
+        return personCopy;
+    }
+    
+    // test
+    const person = { name: "John", age: 29 };
+    const updatedPerson = incrementAgeCopySimple(person);
+    console.log("Original Person:", person);
+    console.log("Updated Person:", updatedPerson);
+}
+
+///////////Part 4////////////////////////////////////////////////////////////////////////////
