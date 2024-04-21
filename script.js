@@ -179,13 +179,70 @@ Array(0)
 ////////////////////////////////////////////////////////////////////////////////////////////
 //2c Map the array to change the “occupation” key to “job” and increment every age by 1.
 
+const ppl = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+];
 
+// change 'occupation' to 'job' and increment 'age'
+function updatePpl(ppl) {
+    return {
+        id: ppl.id,
+        name: ppl.name,
+        job: ppl.occupation,  // 'occupation' to 'job'
+        age: String(parseInt(ppl.age) + 1)  // age +1 
+    };
+}
 
+const updatedPeople = ppl.map(updatePpl);
 
+console.log("Updated People:", updatedPeople);
+/* Output
+Updated People: 
+(5) [{…}, {…}, {…}, {…}, {…}]
+0
+: 
+{id: '42', name: 'Bruce', job: 'Knight', age: '42'}
+1
+: 
+{id: '48', name: 'Barry', job: 'Runner', age: '26'}
+2
+: 
+{id: '57', name: 'Bob', job: 'Fry Cook', age: '20'}
+3
+: 
+{id: '63', name: 'Blaine', job: 'Quiz Master', age: '59'}
+4
+: 
+{id: '7', name: 'Bilbo', job: 'None', age: '112'}
+length
+: 
+5
+[[Prototype]]
+: 
+Array(0)  */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //2d Use the reduce method to calculate the sum of the ages.
+const peeple = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+];
 
+// reduce function
+function sumAges(total, person) {
+    return total + parseInt(person.age);
+}
+
+const totalAge = peeple.reduce(sumAges, 0);
+console.log("Total Age Sum:", totalAge);
+// Output: Total Age Sum: 254
 
 
 
@@ -194,4 +251,8 @@ Array(0)
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //2e Then use the result to calculate the average age.
 
+const averageAge = totalAge / peeple.length;
+console.log("Average Age:", averageAge);
 
+//output: Average Age: 50.8
+/////////////Part 3/////////////////////////////////////////////////////////////////////////////////
